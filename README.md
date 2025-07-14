@@ -1,10 +1,8 @@
 # Whois
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![GoDoc](https://pkg.go.dev/badge/github.com/likexian/whois.svg)](https://pkg.go.dev/github.com/likexian/whois)
-[![Go Report Card](https://goreportcard.com/badge/github.com/likexian/whois)](https://goreportcard.com/report/github.com/likexian/whois)
-[![Build Status](https://github.com/likexian/whois/actions/workflows/gotest.yaml/badge.svg)](https://github.com/likexian/whois/actions/workflows/gotest.yaml)
-[![Code Cover](https://release.likexian.com/whois/coverage.svg)](https://github.com/likexian/whois/actions/workflows/gotest.yaml)
+[![Build Status](https://github.com/ducksify/whois/actions/workflows/gotest.yaml/badge.svg)](https://github.com/ducksify/whois/actions/workflows/gotest.yaml)
+[![codecov](https://codecov.io/gh/ducksify/whois/graph/badge.svg?token=6OWB1WSJTD)](https://codecov.io/gh/ducksify/whois)
 
 Whois is a simple Go module for domain and ip whois information query.
 
@@ -19,20 +17,20 @@ Or you can do development by using this golang module as below.
 ## Installation
 
 ```shell
-go get -u github.com/likexian/whois
+go get -u github.com/ducksify/whois
 ```
 
 ## Importing
 
 ```go
 import (
-    "github.com/likexian/whois"
+    "github.com/ducksify/whois"
 )
 ```
 
 ## Documentation
 
-Visit the docs on [GoDoc](https://pkg.go.dev/github.com/likexian/whois)
+Visit the docs on [GoDoc](https://pkg.go.dev/github.com/ducksify/whois)
 
 ## Example
 
@@ -72,10 +70,6 @@ if err == nil {
     fmt.Println(result)
 }
 ```
-
-## Whois information parsing
-
-Please refer to [whois-parser](https://github.com/likexian/whois-parser)
 
 ## License
 

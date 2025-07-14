@@ -66,7 +66,7 @@ func Version() string {
 
 // Author returns package author
 func Author() string {
-	return "[Li Kexian](https://www.likexian.com/)"
+	return "[ fegger ](https://panop.io/)"
 }
 
 // License returns package license

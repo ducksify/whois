@@ -4,7 +4,6 @@
 
 run:
   timeout: 5m
-  skip-dirs-use-default: true
 
 linters:
   disable-all: true
@@ -20,7 +19,7 @@ linters:
     - durationcheck
     - errname
     - errorlint
-    - exportloopref
+    - copyloopvar
     - gofmt
     - goimports
     - lll
@@ -42,8 +41,6 @@ linters-settings:
     skip-tests: true
 
 issues:
-  max-issues-per-linter: 0
-  max-same-issues: 0
   exclude-rules:
     - path: _test\.go
       linters:

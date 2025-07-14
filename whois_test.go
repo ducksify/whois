@@ -33,7 +33,7 @@ import (
 
 func TestVersion(t *testing.T) {
 	assert.Contains(t, Version(), ".")
-	assert.Contains(t, Author(), "likexian")
+	assert.Contains(t, Author(), "fegger")
 	assert.Contains(t, License(), "Apache License")
 }
 

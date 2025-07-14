@@ -7,7 +7,7 @@ name: GoTest
 on:
   push:
     branches:
-      - '**'
+      - main
     tags-ignore:
       - '**'
   pull_request:
@@ -23,12 +23,12 @@ jobs:
         uses: golangci/golangci-lint-action@v4
         with:
           version: latest
-          args: -v
+          args: --out-format=colored-line-number -v
   test:
     strategy:
       fail-fast: false
       matrix:
-        go: [1.19.x, 1.20.x, 1.21.x, 1.22.x]
+        go: [1.24.x]
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
@@ -41,9 +41,8 @@ jobs:
       - name: GoTest code
         run: |
           sudo go test -race -coverprofile="coverage.txt" -covermode=atomic ./...
-          coverage=$(go tool cover -func=coverage.txt | grep total | grep -Eo '[0-9]+\.[0-9]+')
-          echo "{\"coverage\": $coverage}"
-          if [[ "${{ matrix.go }}" == "1.22.x" ]]; then
-            repository=$(echo '${{ github.repository }}' | awk -F'/' '{print $2}')
-            curl -A "coverage client/1.0.0" -H "X-Release-Token:${{ secrets.RELEASE_TOKEN }}" -F "coverage=$coverage" https://release.likexian.com/$repository/coverage
-          fi
+      - name: Upload coverage
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: ducksify/whois
